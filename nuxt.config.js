@@ -44,7 +44,7 @@ export default {
   content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  buildDir: 'nuxt-dist',
+  // buildDir: 'nuxt-dist',
   build: {
   }
 }
