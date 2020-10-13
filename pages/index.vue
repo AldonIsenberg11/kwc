@@ -1,10 +1,9 @@
 <template>
   <div class="container">
-    <a>
       <head>
         <title>KS Wrestling Center</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <charset="utf-8" />
+        <name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
           rel="stylesheet"
@@ -25,8 +24,9 @@
       <body>
         <div id="app">
           <v-app>
-            <v-app-bar app color="white" height="100">
-              <v-avatar class="mr-3" color="grey lighten-5" size="70">
+            <v-main>
+              <v-app-bar app color="none" height="50">
+              <v-avatar class="mr-3" color="grey lighten-5" size="50">
                 <v-img
                   contain
                   max-height="70%"
@@ -37,16 +37,18 @@
               <v-toolbar-title class="font-weight-black headline">
                 KS Wrestling Center
               </v-toolbar-title>
-            </v-app-bar>
 
-            <v-main>
+            </v-app-bar>
+            <v-banner
+              elevation="10">
               <section id="hero">
-                <v-row no-gutters>
+                <v-row
+                  align="center"
+                  justify="center"
+                  >
                   <v-img
-                    :min-height="
-                      'calc(100vh - ' + $vuetify.application.top + 'px)'
-                    "
-                    src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+                  height="500"
+                    src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/121015140_103253078228752_7405710129881532891_o.jpg?_nc_cat=104&_nc_sid=e3f864&_nc_ohc=V7hIRNO8R10AX8fR-0W&_nc_ht=scontent-dfw5-2.xx&oh=c6ac62f532eb2e8213b304400c31459e&oe=5FAB8252"
                   >
                     <v-theme-provider dark>
                       <v-container fill-height>
@@ -99,14 +101,12 @@
                   </v-img>
                 </v-row>
               </section>
-
               <section id="about-me">
                 <div class="py-12"></div>
 
                 <v-container class="text-center">
                   <h2 class="display-2 font-weight-bold mb-3">WHO WE ARE</h2>
-
-                  <v-responsive class="mx-auto mb-8" width="56">
+                  <v-responsive class="mx-auto mb-8" width="56"><br />
                     <v-divider class="mb-1"></v-divider>
 
                     <v-divider></v-divider>
@@ -114,7 +114,7 @@
 
                   <v-responsive
                     class="mx-auto title font-weight-light mb-8"
-                    max-width="720"
+                    max-width="500"
                   >
                     KC Wrestling center was founded yada yada
                     more details
@@ -123,24 +123,21 @@
                     the end
                   </v-responsive>
 
-                  <v-avatar class="elevation-12 mb-12" size="128">
+                  <v-avatar class="elevation-12 mb-12" size="240">
                     <v-img
-                      src="https://cdn.vuetifyjs.com/images/john.png"
                     ></v-img>
                   </v-avatar>
 
                   <div></div>
 
                   <v-btn
-                    color="grey"
-                    href="https://vuetifyjs.com"
-                    outlined
-                    large
-                  >
-                    <span class="grey--text text--darken-1 font-weight-bold">
-                      Documentation
-                    </span>
-                  </v-btn>
+                            class="align-self-end"
+                            fab
+                            outlined
+                            @click="$vuetify.goTo('#features')"
+                          >
+                            <v-icon>mdi-chevron-double-down</v-icon>
+                          </v-btn>
                 </v-container>
 
                 <div class="py-12"></div>
@@ -316,6 +313,7 @@
 
                 <div class="py-12"></div>
               </v-sheet>
+             </v-banner>
             </v-main>
 
             <v-footer class="justify-center" color="#292929" height="100">
@@ -329,7 +327,6 @@
           </v-app>
         </div>
       </body>
-    </a>
   </div>
 </template>
 
@@ -404,7 +401,7 @@ export default {};
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100;
   display: flex;
   justify-content: center;
   align-items: center;
