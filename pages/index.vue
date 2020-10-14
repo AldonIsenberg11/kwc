@@ -21,6 +21,8 @@
           rel="shortcut icon"
           href="https://cdn.vuetifyjs.com/images/logos/favicon.ico"
         />
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="c3mTi1OH"></script>
       </head>
       <body>
         <div id="app">
@@ -222,7 +224,7 @@
                       <v-col
                         v-for="[value, title] of stats"
                         :key="title"
-                        cols="12"
+                        cols="20"
                         md="3"
                       >
                         <div class="text-center">
@@ -258,13 +260,17 @@
                   </v-responsive>
 
                   <v-row>
-                    <v-col
-                      v-for="({ src, text, title }, i) in articles"
-                      :key="i"
-                      cols="12"
-                      md="4"
-                    >
-                      <v-img
+                                        <iframe
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId"
+                    width="500"
+                    height="700"
+                    style="border:none;overflow:hidden"
+                    scrolling="no"
+                    frameborder="0"
+                    allowTransparency="true"
+                    allow="encrypted-media">
+                    </iframe>
+                       <v-img
                         :src="src"
                         class="mb-4"
                         height="275"
@@ -284,8 +290,7 @@
                       <v-btn class="ml-n4 font-weight-black" text>
                         Continue Reading
                       </v-btn>
-                    </v-col>
-                  </v-row>
+                                  </v-row>
                 </v-container>
 
                 <div class="py-12"></div>
