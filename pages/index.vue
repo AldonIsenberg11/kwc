@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div
+  >
       <head>
         <title>KS Wrestling Center</title>
         <charset="utf-8" />
@@ -25,23 +26,21 @@
         <div id="app">
           <v-app>
             <v-main>
-              <v-app-bar app color="none" height="50">
-              <v-avatar class="mr-3" color="grey lighten-5" size="50">
-                <v-img
-                  contain
-                  max-height="70%"
-                  src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-                ></v-img>
-              </v-avatar>
+              <v-app-bar app color="black" background-opacity="50%" height="80">
+                <v-avatar class="elevation-12 mr-3" size="70">
+                    <v-img
+                    contain
+                    src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/121269031_103252158228844_7346466079413371283_o.png?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=XfSpy9JF65cAX_PxPvv&_nc_ht=scontent-dfw5-2.xx&oh=4fe2d9e8447d247e88a5178859df8fd4&oe=5FAC741E"
+                    max-height="100%"
+                    ></v-img>
+                  </v-avatar>
 
-              <v-toolbar-title class="font-weight-black headline">
+                <v-toolbar-title class="white--text headline">
                 KS Wrestling Center
               </v-toolbar-title>
 
             </v-app-bar>
-            <v-banner
-              elevation="10">
-              <section id="hero">
+            <section id="hero">
                 <v-row
                   align="center"
                   justify="center"
@@ -65,10 +64,10 @@
                             <span
                               :class="[
                                 $vuetify.breakpoint.smAndDown
-                                  ? 'display-1'
-                                  : 'display-2'
+                                  ? 'display-2'
+                                  : 'display-3'
                               ]"
-                              class="font-weight-light"
+                              class="font-weight-black"
                             >
                               WELCOME TO
                             </span>
@@ -103,40 +102,69 @@
               </section>
               <section id="about-me">
                 <div class="py-12"></div>
-
-                <v-container class="text-center">
-                  <h2 class="display-2 font-weight-bold mb-3">WHO WE ARE</h2>
-                  <v-responsive class="mx-auto mb-8" width="56"><br />
-                    <v-divider class="mb-1"></v-divider>
-
-                    <v-divider></v-divider>
+                  <v-container fill-height>
+                        <v-row
+                          align="center"
+                          class="white--text mx-auto"
+                          justify="center"
+                        >
+                          <v-col
+                            class="black--text text-left"
+                            cols="12"
+                            tag="h1"
+                          >
+                            <span
+                              :class="[
+                                $vuetify.breakpoint.smAndDown
+                                  ? 'display-1'
+                                  : 'display-2'
+                              ]"
+                              class="font-weight-light"
+                            >
+                            <h2
+                            class="display-2 font-weight-bold mb-3">WHO WE ARE</h2>
+                  <v-responsive class="mx-auto mb-8" width="556">
+                    <v-divider class="mb-1" ></v-divider><v-divider></v-divider>
                   </v-responsive>
-
-                  <v-responsive
+                            </span>
+                            <span
+                              :class="[
+                                $vuetify.breakpoint.smAndDown
+                                  ? 'display-3'
+                                  : 'display-4'
+                              ]"
+                              class="font-weight-black"
+                            >
+                            <v-responsive
                     class="mx-auto title font-weight-light mb-8"
-                    max-width="500"
+                    max-width="1000"
                   >
-                    KC Wrestling center was founded yada yada
-                    more details
-                    maybe philosophies and or goals
-                    other stuff for intro
-                    the end
+                    KC Wrestling K.W.C. provides premium facilities for hosting Wrestling & M.M.A driven events. We provide premium venue services with a focus on innovating the user experience.
+                  <br><br>
+                  **20 WRESTLING MATS** is the amount of space we are talking about. We aim to drive economic growth and and enhance the quality of wrestling life by providing facilities that are safe, versatile and active. Send us a message if you wish to know more.
                   </v-responsive>
-
-                  <v-avatar class="elevation-12 mb-12" size="240">
+                            </span><v-responsive class="mx-auto mb-8" width="556">
+                    <v-divider class="mb-1" ></v-divider><v-divider></v-divider>
+                  </v-responsive>
+                          </v-col>
+                        </v-row>
+                      </v-container>
+                                </v-row>
+                                <v-container class="text-center">
+                                    <v-avatar class="elevation-12 mb-12" size="240">
                     <v-img
+                    src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/121269031_103252158228844_7346466079413371283_o.png?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=XfSpy9JF65cAX_PxPvv&_nc_ht=scontent-dfw5-2.xx&oh=4fe2d9e8447d247e88a5178859df8fd4&oe=5FAC741E"
                     ></v-img>
                   </v-avatar>
 
                   <div></div>
-
                   <v-btn
                             class="align-self-end"
                             fab
                             outlined
-                            @click="$vuetify.goTo('#features')"
+                            @click="$vuetify.goTo('#hero')"
                           >
-                            <v-icon>mdi-chevron-double-down</v-icon>
+                            <v-icon>mdi-chevron-double-up</v-icon>
                           </v-btn>
                 </v-container>
 
@@ -189,10 +217,6 @@
               </section>
 
               <section id="stats">
-                <v-parallax
-                  :height="$vuetify.breakpoint.smAndDown ? 700 : 500"
-                  src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-                >
                   <v-container fill-height>
                     <v-row class="mx-auto">
                       <v-col
@@ -215,7 +239,6 @@
                       </v-col>
                     </v-row>
                   </v-container>
-                </v-parallax>
               </section>
 
               <section id="blog">
@@ -313,9 +336,7 @@
 
                 <div class="py-12"></div>
               </v-sheet>
-             </v-banner>
             </v-main>
-
             <v-footer class="justify-center" color="#292929" height="100">
               <div
                 class="title font-weight-light grey--text text--lighten-1 text-center"
@@ -401,7 +422,7 @@ export default {};
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100;
+  min-height: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
