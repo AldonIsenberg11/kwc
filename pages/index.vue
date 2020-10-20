@@ -20,54 +20,48 @@
                     LATEST NEWS
                   </h2>
 
-                  <v-responsive class="mx-auto mb-12" width="56">
+                  <v-responsive class="mx-auto mb-12" width="56" align-center>
                     <v-divider class="mb-1"></v-divider>
 
                     <v-divider></v-divider>
-                  </v-responsive>
-                  <v-btn class="ml-n4 font-weight-black" text>
-                        Continue Reading
-                      </v-btn>
-
-                  <v-row>
-                    <v-col
-                      v-for="({ icon, title, text }, i) in features"
-                      :key="i"
-                      cols="12"
-                      md="4"
-                    >
-                      <v-card class="py-12 px-4" flat>
-                        <v-theme-provider dark>
-                          <div>
-                            <v-avatar color="primary" size="88">
-                              <v-icon large v-text="icon"></v-icon>
-                            </v-avatar>
-                          </div>
-                        </v-theme-provider>
-
-                        <v-card-title
-                          class="justify-center font-weight-black text-uppercase"
-                          v-text="title"
-                        ></v-card-title>
-
-                        <v-card-text class="subtitle-1" v-text="text">
-                        </v-card-text>
-                      </v-card>
-                    </v-col>
-                  </v-row>
+                  </v-responsive><br>
+                </v-container>
+                <v-container><v-col>
+                  <iframe
+                  src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fvideos%2F2840448136236421%2F&show_text=false&width=734&height=551&appId"
+                  width="534"
+                  height="351"
+                  style="border:none;overflow:hidden"
+                  scrolling="no"
+                  frameborder="0"
+                  allowTransparency="true"
+                  allow="encrypted-media"
+                  allowFullScreen="true"
+                  ></iframe></v-col>
+                  <v-col><iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F105065074714219&show_text=true&width=552&height=168&appId"
+                  width="534"
+                  height="351"
+                 ></iframe></v-col><v-col>
+                  <iframe
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F104160664804660&show_text=true&width=552&height=497&appId"
+                  width="534"
+                  height="351"
+                  ></iframe></v-col>
+                  </v-container>
+                <v-container justify-end><NuxtLink
+        to="/news"
+        class="button">MORE NEWS</NuxtLink>
                 </v-container>
 
-                <div class="py-12"></div>
               </section>
 
-              <section id="blog">
-                <div class="py-12"></div>
-
-                <v-container>
+              <section id="events">
+                                <v-container>
                   <h2
                     class="display-2 font-weight-bold mb-3 text-uppercase text-center"
                   >
-                    Blog
+                    Upcoming Events
                   </h2>
 
                   <v-responsive class="mx-auto mb-12" width="56">
@@ -77,19 +71,12 @@
                   </v-responsive>
 
                   <v-row>
-                  <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId"
-                    width="500"
-                    height="700"
-                    style="border:none;overflow:hidden"
-                    scrolling="no"
-                    frameborder="0"
-                    allowTransparency="true"
-                    allow="encrypted-media">
-                    </iframe>
-                       </v-row>
+                                         </v-row>
                 </v-container>
-
+<v-container justify-end><NuxtLink
+        to="/events"
+        class="button">GO TO EVENTS PAGE</NuxtLink>
+                                        </v-container>
                 <div class="py-12"></div>
               </section>
             </v-main>

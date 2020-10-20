@@ -40,12 +40,12 @@
           </navbar></v-card-actions></v-card>
   </v-header>
    <v-main
-   style="margin-top:0px;width:100%;text-align:center"
+   style="margin-top:0px;margin-bottom:75px;width:100%;text-align:center"
    >
     <Nuxt/>
 </v-main>
      <v-footer
-            style="position:fixed;bottom:0;height:auto;margin-top:10px;width:100%;text-align:center"
+            style="position:fixed;bottom:0;height:auto;margin-top:30px;width:100%;text-align:center"
         dark
     padless
     >
@@ -114,7 +114,7 @@ html {
   display: block;
   font-weight: 300;
   font-size: 75px;
-  color: #35495e;
+  color: #22282e;
   letter-spacing: 1px;
 }
 
@@ -148,13 +148,24 @@ html {
   }
 .generaltext {
   font-weight: 300;
-  font-size: 30px;
+  font-size: 24px;
   color: rgb(11, 32, 32);
   word-spacing: 5px;
   padding-bottom: 1px;
-  padding-left: 1px;
+  padding-left: 200px;
+  padding-right: 10px;
   }
-
+.newstitle {
+  font-weight: 300;
+  font-size: 30px;
+  color: rgb(11, 11, 12);
+  text-decoration-line: underline;
+  font-style: italic;
+  word-spacing: 5px;
+  padding-bottom: 1px;
+  padding-left: 150px;
+  padding-right: 0px;
+  }
 .links {
   padding-top: 1px;
 }
