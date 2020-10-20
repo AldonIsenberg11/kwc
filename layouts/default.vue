@@ -1,43 +1,47 @@
 <template>
   <div>
-    <header>
-      <v-app-bar app dark height="50">
-                <v-avatar class="elevation-12 mr-3" size="50">
-                    <v-img
+      <v-header
+      fixed
+      >
+                <v-card
+                class="flex"
+                flat
+                tile>
+                <v-card-actions>
+                <NuxtLink
+        to="/"><v-avatar
+                class="elevation-12"
+                size="200"
+                >
+                            <v-img
                     contain
                     src="https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/121269031_103252158228844_7346466079413371283_o.png?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=XfSpy9JF65cAX_PxPvv&_nc_ht=scontent-dfw5-2.xx&oh=4fe2d9e8447d247e88a5178859df8fd4&oe=5FAC741E"
                     max-height="100%"
                     ></v-img>
-                  </v-avatar>
-
-                <v-toolbar-title
-                class="white--text subtitle"
-                >
-                KS Wrestling Center
-                </v-toolbar-title>
-                <v-spacer></v-spacer>
-                            <navbar>
-        <NuxtLink
+                  </v-avatar></NuxtLink><v-spacer></v-spacer>
+      <navbar>
+                <NuxtLink
         to="/"
         class="button">
         Home
         </NuxtLink>
         <NuxtLink
-        to="/aboutme"
-        class="button">About Me</NuxtLink>
+        to="/about"
+        class="button">About</NuxtLink>
         <NuxtLink
-        to="/projects"
-        class="button">Projects</NuxtLink>
+        to="/events"
+        class="button">Events</NuxtLink>
         <NuxtLink
-        to="/resume"
-        class="button"> Resume</NuxtLink>
+        to="/news"
+        class="button"> News</NuxtLink>
         <NuxtLink
         to="/contact"
         class="button">Contact</NuxtLink>
-    </navbar>
-  </v-app-bar>
-              </header>
-   <v-main>
+          </navbar></v-card-actions></v-card>
+  </v-header>
+   <v-main
+   style="margin-top:0px;width:100%;text-align:center"
+   >
     <Nuxt/>
 </v-main>
      <v-footer
@@ -50,7 +54,7 @@
       flat
       tile
       >
-      <v-card-title class="subtitle">
+      <v-card-title class="subtitledark">
           Connect with us!
         <v-spacer></v-spacer>
         <v-btn icon>
@@ -94,6 +98,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+
 .container {
   margin: 0 auto;
   min-height: 1000;
@@ -108,7 +113,7 @@ html {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 75px;
   color: #35495e;
   letter-spacing: 1px;
 }
@@ -116,10 +121,38 @@ html {
 .subtitle {
   font-weight: 300;
   font-size: 30px;
-  color: #ffffff;
+  color: black;
   word-spacing: 5px;
   padding-bottom: 1px;
   padding-left: 20px;
+  }
+.subtitledark {
+  font-weight: 300;
+  font-size: 30px;
+  color: white;
+  word-spacing: 5px;
+  padding-bottom: 1px;
+  padding-left: 20px;
+  }
+  .bannertag {
+  font-family: 'helvetica condensed','Franklin Gothic', 'Arial Narrow', Arial, sans-serif, "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue" ;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 270px;
+  font-stretch:ultra-condensed;
+  color: white;
+  word-spacing: 2px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  }
+.generaltext {
+  font-weight: 300;
+  font-size: 30px;
+  color: rgb(11, 32, 32);
+  word-spacing: 5px;
+  padding-bottom: 1px;
+  padding-left: 1px;
   }
 
 .links {
@@ -136,14 +169,14 @@ html {
   display: inline-block;
   border-radius: 4px;
   border: 0px solid #3b8070;
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 15px 30px;
 }
 
 .button:hover {
-  color: #fff;
-  background-color: #2f2f2f;
+  color: black;
+  font-size:20px;
 }
 
 .button--grey {
@@ -159,5 +192,11 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.darker-span {
+  filter: brightness(50%);
+}
+.brighter-span {
+  filter: brightness(150%);
 }
 </style>
