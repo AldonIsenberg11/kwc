@@ -82,6 +82,7 @@ li{
   display: inline;
   float: right;
   background-color: #222629;
+  border-bottom: rgb(128, 0, 0) 5px solid;
   color: #F2F2F2;
   width:100%;
   text-align: right;
@@ -96,7 +97,7 @@ li{
     h3{
       font-weight: 600;
       font-size: 2.5em;
-      color: #222629;
+      color: rgb(128, 0, 0);
       word-spacing: 5px;
       padding-bottom: 5px;
       padding-left: 10px;
@@ -106,7 +107,7 @@ li{
     h2{
       font-weight: 600;
       font-size: 2.5em;
-      color: #f2f2f2;
+      color: #100041;
       word-spacing: 5px;
       padding-bottom: 5px;
       padding-left: 10px;
@@ -119,11 +120,12 @@ li{
     #banner{
       background-image: url("../assets/chris-chow-wrestlers.png");
       background-blend-mode: overlay;
+      border-top:white 140px solid;
       background-color: #100041;
       background-position: center center;
       background-size: cover;
         width: 100%;
-        padding-top: 115px;
+        padding-top: 2px;
      box-shadow: 10px 10px 4px #000000;
      z-index: 8;
                        }
@@ -150,9 +152,9 @@ li{
       text-shadow: 5px 5px 4px #000000;
             }
     #biglogo img{
-      border: 0px solid red;
+      border: 5px solid rgb(128, 0, 0);
       border-radius: 50%;
-      margin:50px auto 0 auto;
+      margin:10px auto 0 auto;
       display: block;
       box-shadow: 10px 10px 4px #000000;
       width: 100%;
@@ -171,7 +173,9 @@ li{
       background-position: center center;
       background-size: cover;
       width: 100%;
-      border-radius: 0px;
+      border-radius: 5px;
+      border-top: 5px rgb(128, 0, 0) solid ;
+      border-bottom: 5px rgb(128, 0, 0) solid ;
       margin: auto;
       padding:10px 50px 20px 50px;
       box-shadow: 3px 3px 4px #000000;
@@ -215,10 +219,11 @@ li{
     grid-template-rows: 1fr
           }
           .newscard{
-            border: 0px solid #f2f2f2;
+            border: 1px solid #474b4f;
             border-radius: 0px;
             text-align: center;
             min-height: 500px;
+            box-shadow: 3px 3px 4px #000000;
                       }
           .newsicon{
             min-height: 300px;
@@ -233,7 +238,8 @@ li{
       min-height: 300px;
       width: 100%;
       margin: auto;
-      background-color: #100041;;
+                  background-image: linear-gradient(to bottom right, #100041,#240090);
+      border-bottom: 40px rgb(128, 0, 0) solid ;
     }
         iframe{
   width: 100%;
@@ -251,6 +257,9 @@ li{
     min-height: 50vh;
     border: 1px black solid;
     margin: auto;
+    background-image: url("../assets/mavsgymcolor.png");
+    background-size: cover;
+    background-position: center;
   }
 .newstitle {
   font-weight: 300;
@@ -293,6 +302,7 @@ li{
   width: 80%;
   box-shadow: 5px 10px 2em black;
   background-color: #F2F2F2;
+  border: 2px black solid ;
   }
   #form2 input{
     width: 95%;
@@ -388,5 +398,13 @@ select{
 .brighter-span {
   filter: brightness(150%);
 }
-
+#about{
+  padding-top: 140px;
+}
+#events{
+  padding-top: 140px;
+}
+#news{
+  padding-top: 140px;
+}
 </style>

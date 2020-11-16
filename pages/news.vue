@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-<section id="NEWS">
+<section id="news">
                   <h2>Featured News</h2>
                   <hr>
                   <br>

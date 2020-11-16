@@ -30,9 +30,11 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    
     // https://go.nuxtjs.dev/content
     // '@nuxt/content'
+    '@nuxtjs/strapi'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -43,5 +45,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   // buildDir: 'nuxt-dist',
-  build: {}
+  build: {},
+
+  strapi: {
+    entities: ['events', 'news'],
+    url: 'http://localhost:1337'
+  },
 };

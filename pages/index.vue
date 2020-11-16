@@ -10,7 +10,7 @@
   <div class="clr"></div>
   <section id="welcome">
     <div class="content">
-       <h3>Latest News</h3>
+       <h2>Latest News</h2>
        <br>
        <div class="newspreview">
         <div class="newscard"><div class="newsicon"><iframe
@@ -32,7 +32,7 @@
   </section>
   <section id=upcomingevents>
     <div class="content">
-        <h2>Upcoming Events</h2><br>
+        <h3>Upcoming Events</h3><br>
         <div class="eventpreview">
         <div class="eventcard"><div class="eventicon"><img height="90%" src="../assets/house.png" alt="Event"><br></div><div class="eventblurb"> Open House <br><br>Join us Oct 15th to check out our new facilities</div></div>
         <div class="eventcard"><div class="eventicon"><img height="90%" src="../assets/wrestlers.png" alt="Event"><br></div><div class="eventblurb">Wrestling Classic<br><br> Oct 15 is the last day to register for Wrestling Classic </div></div>
@@ -43,7 +43,7 @@
   </section>
   <section id="affiliates">
     <div class="content">
-              <h3>Affiliates</h3>
+              <h2>Affiliates</h2>
         <br>
         <div class="linkbanner">
         <div><img src="../assets/logo1.png" alt="Event"></div>
@@ -56,7 +56,7 @@
   </section>
   <section id="quickcontact">
     <div class="content">
-        <h2>Stay in the know</h2><br><br>
+        <h3>Stay in the know</h3><br><br>
         <form id="form2">
          <div>
           <label>First Name</label>
