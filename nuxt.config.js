@@ -34,7 +34,8 @@ export default {
     
     // https://go.nuxtjs.dev/content
     // '@nuxt/content'
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi',
+    '@nuxtjs/apollo',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -50,5 +51,12 @@ export default {
   strapi: {
     entities: ['events', 'news'],
     url: 'http://localhost:1337'
+  },
+  apollo: {  
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:1337/graphql'
+      }
+    }
   },
 };

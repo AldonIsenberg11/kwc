@@ -196,17 +196,14 @@ li{
             background-color: #F2F2F2;
             box-shadow: 3px 3px 4px #000000;
            text-align: center;
-                      }
+            }
           .eventicon{
-            height: 50%;
             background-image: linear-gradient(to bottom right, #100041,#240090);
             margin: auto;
-            padding: 20px;
-          }
+            }
           .eventblurb{
-            height: 50%;
             margin: auto;
-            padding: 30px;
+            padding: 20px;
           }
           .newspreview{
             display: grid;
@@ -271,6 +268,15 @@ li{
   padding-bottom: 1px;
   padding-left: 150px;
   padding-right: 0px;
+  }
+  .eventbox{
+    display: grid;
+            min-height: 200px;
+            width: 60%;
+            margin: auto;
+            padding-top: 20px;
+            grid-gap: 50px;
+            grid-template-columns: 1fr 1fr 1fr;
   }
 .links {
   padding-top: 1px;
@@ -357,7 +363,15 @@ select{
   text-decoration: none;
   padding: 15px 30px;
 }
-
+.button3 {
+  display: block;
+  text-align: left;
+  border-radius: 4px;
+  border: 0px solid #3b8070;
+  color: black;
+  text-decoration: none;
+  padding: 10px 10px;
+}
 .nav .button {
   display: inline-block;
   border-radius: 4px;
@@ -401,7 +415,7 @@ select{
 #about{
   padding-top: 140px;
 }
-#events{
+#eventpage{
   padding-top: 140px;
 }
 #news{
