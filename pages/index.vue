@@ -17,33 +17,35 @@
           <div class="newscard">
             <div class="newsicon">
               <iframe
-                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fvideos%2F2840448136236421%2F&show_text=false&width=734&height=551&appId"
-                height="300px"
+                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fvideos%2F1026246774509319%2F&show_text=false"
+                height="400px"
                 allow="encrypted-media"
                 allowFullScreen="true"
               />
               <br>
             </div>
             <div class="eventblurb">
-              New Facility
+              Mats are here!!!
               <br>
               <br>
-              Get a sneak peak of our new facility before the open house
+              Starting to come together
             </div>
           </div>
           <div class="newscard">
             <div class="newsicon">
               <iframe
-                height="300px"
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F105065074714219&show_text=true&width=552&height=168&appId"
-              />
+                height="400px"
+                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F124466549440738&show_text=false"
+                allow="encrypted-media"
+                allowFullScreen="true"
+                />
               <br>
             </div>
             <div class="eventblurb">
-              T-Shirt Giveaway!!!!
+              Practice has Started
               <br>
               <br>
-              Like us on Facebook for a chance to win a KWC tshirt
+              KWC welcomes the Trailblazer Kids Club out of Gardner as our 1st practice group
             </div>
           </div>
           <!-- <div class="newscard"><div class="newsicon"><img height=100px src="../assets/boxingring.png" alt="Event"><br></div>MMA Maybe<br><br>Nov 6th. Get you tickets now. Selling out fast!</div> -->
@@ -100,7 +102,7 @@
         </NuxtLink>
       </div>
     </section>
-    <section id="affiliates">
+    <!-- <section id="affiliates">
       <div class="content">
         <h2>Affiliates</h2>
         <br>
@@ -112,7 +114,7 @@
           <div><img src="../assets/logo5.png" alt="Event"></div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section id="quickcontact">
       <div class="content">
         <h3>Stay in the know</h3>
