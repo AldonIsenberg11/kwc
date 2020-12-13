@@ -221,9 +221,10 @@ li{
           .eventcard{
             border: 0px solid #f2f2f2;
             border-radius: 0px;
-            background-color: #F2F2F2;
+            background-color: #ffffff;
             box-shadow: 3px 3px 4px #000000;
            text-align: center;
+                      width: 100%;
             }
           .eventicon{
             background-image: linear-gradient(to bottom right, #100041,#240090);
@@ -300,7 +301,7 @@ li{
   .eventbox{
     display: grid;
             min-height: 200px;
-            width: 60%;
+            width: 100%;
             margin: auto;
             padding-top: 20px;
             grid-gap: 50px;
@@ -324,7 +325,7 @@ li{
   display: block;
   float: right;
   width: 100%;
-  box-shadow: 5px 10px 2em #888888;
+  box-shadow: 5px 10px 1em #888888;
 }
 #form2 {
   margin:auto;
@@ -400,6 +401,16 @@ select{
   text-decoration: none;
   padding: 10px 10px;
 }
+.moreInfoButton {
+  display: inline-block;
+  align-self: flex-end;
+  text-align: left;
+  border-radius: 4px;
+  border: 0px solid #3b8070;
+  color: black;
+  text-decoration: none;
+  padding: 15px 30px;
+  }
 .nav .button {
   display: inline-block;
   border-radius: 4px;
@@ -415,6 +426,9 @@ select{
   color: #240090;
 }
 .button2:hover {
+  color: #240090;
+}
+.moreInfoButton:hover {
   color: #240090;
 }
 .nav .button:hover {
@@ -450,4 +464,20 @@ select{
 #news{
   padding-top: 140px;
 }
+#eventpage{
+  padding-top: 140px;
+}
+#contactpage{
+  padding-top: 140px;
+}
+#contactbox{
+  padding-top: 140px;
+display: grid;
+            min-height: 200px;
+            width: 100%;
+            margin: auto;
+            padding-top: 20px;
+            grid-gap: 50px;
+            grid-template-columns: 1fr 1fr;
+  }
 </style>

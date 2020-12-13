@@ -38,7 +38,7 @@
                 src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F124466549440738&show_text=false"
                 allow="encrypted-media"
                 allowFullScreen="true"
-                />
+              />
               <br>
             </div>
             <div class="eventblurb">
@@ -60,42 +60,17 @@
         <h3>Upcoming Events</h3>
         <br>
         <div class="eventpreview">
-          <div class="eventcard">
-            <div class="eventicon">
-              <img height="90%" src="../assets/house.png" alt="Event">
-              <br>
-            </div>
-            <div class="eventblurb">
-              Open House
-              <br>
-              <br>
-              Join us Oct 15th to check out our new facilities
-            </div>
+          <div v-for="event of events" :key="event.id" class="eventcard">
+          <img class="eventicon" :src="'https://kwc-server-strapi.herokuapp.com' + event.Picture.formats.thumbnail.url">
+          <h1>{{ event.Title }}</h1>
+          <div class="eventblurb">
+            {{ event.Date }}
+            <br>
           </div>
-          <div class="eventcard">
-            <div class="eventicon">
-              <img height="90%" src="../assets/wrestlers.png" alt="Event">
-              <br>
-            </div>
-            <div class="eventblurb">
-              Wrestling Classic
-              <br>
-              <br>
-              Oct 15 is the last day to register for Wrestling Classic
-            </div>
-          </div>
-          <div class="eventcard">
-            <div class="eventicon">
-              <img height="90%" src="../assets/boxingring.png" alt="Event">
-              <br>
-            </div>
-            <div class="eventblurb">
-              MMA Maybe
-              <br>
-              <br>
-              Nov 6th is approaching fast! Get you tickets now. Selling out soon!
-            </div>
-          </div>
+          <NuxtLink to="/events" class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
+            MORE INFO
+          </NuxtLink>
+        </div>
         </div>
         <NuxtLink to="/events" class="button2">
           GO TO EVENTS PAGE
@@ -150,7 +125,21 @@
 </template>
 
 <script>
-export default {}
+import eventsQuery from '~/apollo/events'
+export default {
+  data () {
+    return {
+      events: [],
+      query: ''
+    }
+  },
+  apollo: {
+    events: {
+      prefetch: true,
+      query: eventsQuery
+    }
+  }
+}
 </script>
 
 <style>

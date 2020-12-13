@@ -50,12 +50,12 @@ export default {
 
   strapi: {
     entities: ['events', 'news'],
-    url: 'http://localhost:1337'
+    url: 'https://kwc-server-strapi.herokuapp.com/'
   },
   apollo: {  
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:1337/graphql'
+        httpEndpoint: 'https://kwc-server-strapi.herokuapp.com/graphql'
       }
     }
   },

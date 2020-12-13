@@ -1,23 +1,24 @@
 <template>
   <div class="container">
+  <div id="contactpage">
     <h2>Contact Us</h2>
     <hr>
     <br>
     <br>
-    <div class="container">
-      <div id="homeside2" class="homeside2">
+        <div id="contactbox">
+      <div id="homeside2" class="center">
         <br><br><br><br>
         <h2 class="center">
           Kansas Wrestling Center
         </h2>
-        <br><br><br><br><br>
+        <br><br><br>
         <p>1671 E Kansas City Rd</p>
         <p>Olathe, KS 6606</p>
-        <br><br><br><br>
+        <br><br><br>
         <p>(913)555-0122</p><br>
         <p>(913)555-0123 (fax)</p>
         <br><br><br><br>
-        <p>contact@kwc.com</p>
+        <p>contact@kswrestlingcenter.com</p>
       </div>
       <div id="aside2" class="aside2">
         <form id="form">
@@ -59,7 +60,7 @@
           </div>
         </form>
       </div>
-    </div>
+    </div></div>
     <div class="clr" />
   </div>
 </template>
