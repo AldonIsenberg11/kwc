@@ -142,6 +142,16 @@ li{
       text-align: left;
       text-shadow: 2px 3px 4px #000000;
     }
+    h5{
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #100041;
+      word-spacing: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      text-align: left;
+      text-shadow: 2px 3px 4px #000000;
+    }
         .center{
       text-align: center;
     }
@@ -251,6 +261,24 @@ li{
             min-height: 500px;
             box-shadow: 3px 3px 4px #000000;
                       }
+          .newscard1{
+            border: 1px solid #474b4f;
+            border-radius: 0px;
+            text-align: center;
+            box-shadow: 3px 3px 4px #000000;
+            display: grid;
+            min-height: 100px;
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr
+          }
+        .newsgrid{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+           }
           .newsicon{
             min-height: 300px;
            margin: auto;

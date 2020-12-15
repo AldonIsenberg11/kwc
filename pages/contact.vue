@@ -8,9 +8,9 @@
         <div id="contactbox">
       <div id="homeside2" class="center">
         <br><br><br><br>
-        <h2 class="center">
+        <h5 class="center">
           Kansas Wrestling Center
-        </h2>
+        </h5>
         <br><br><br>
         <p>1671 E Kansas City Rd</p>
         <p>Olathe, KS 6606</p>

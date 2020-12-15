@@ -14,39 +14,15 @@
         <h2>Latest News</h2>
         <br>
         <div class="newspreview">
-          <div class="newscard">
-            <div class="newsicon">
-              <iframe
-                src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fvideos%2F1026246774509319%2F&show_text=false"
-                height="400px"
-                allow="encrypted-media"
-                allowFullScreen="true"
-              />
-              <br>
-            </div>
-            <div class="eventblurb">
-              Mats are here!!!
-              <br>
-              <br>
-              Starting to come together
-            </div>
+          <div v-for="categories of categories" :key="categories.id" class="newscard">
+          <img class="eventicon" :src="'https://kwc-server-strapi.herokuapp.com' + categories.media.formats.thumbnail.url">
+           <div class="eventblurb">
+            <h1>{{ categories.Name }}</h1>
+            {{ categories.Date }}
+            <br>
+            <br>
+            {{ categories.Description }}
           </div>
-          <div class="newscard">
-            <div class="newsicon">
-              <iframe
-                height="400px"
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FksWrestlingCenter%2Fposts%2F124466549440738&show_text=false"
-                allow="encrypted-media"
-                allowFullScreen="true"
-              />
-              <br>
-            </div>
-            <div class="eventblurb">
-              Practice has Started
-              <br>
-              <br>
-              KWC welcomes the Trailblazer Kids Club out of Gardner as our 1st practice group
-            </div>
           </div>
           <!-- <div class="newscard"><div class="newsicon"><img height=100px src="../assets/boxingring.png" alt="Event"><br></div>MMA Maybe<br><br>Nov 6th. Get you tickets now. Selling out fast!</div> -->
         </div>
@@ -126,17 +102,23 @@
 
 <script>
 import eventsQuery from '~/apollo/events'
+import newsQuery from '~/apollo/news'
 export default {
   data () {
     return {
       events: [],
-      query: ''
+      query: '',
+      categories: []
     }
   },
   apollo: {
     events: {
       prefetch: true,
       query: eventsQuery
+    },
+    categories: {
+      prefetch: true,
+      query: newsQuery
     }
   }
 }
