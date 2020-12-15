@@ -1,5 +1,5 @@
 <template>
-  <div class="container1">
+  <div class="container">
      <section id="eventpage">
       <h2>LATEST NEWS</h2>
       <hr>

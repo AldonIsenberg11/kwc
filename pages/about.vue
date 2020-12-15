@@ -3,15 +3,39 @@
     <section id="about">
       <h2>WHO WE ARE</h2>
       <hr>
-      <br>
-      <p>KC Wrestling K.W.C. provides premium facilities for hosting Wrestling and M.M.A driven events. We provide premium venue services with a focus on innovating the user experience.</p>
-      <br>
-      <div class="carousel" />
-      <br>
-      <p>**20 WRESTLING MATS** is the amount of space we are talking about. We aim to drive economic growth and and enhance the quality of wrestling life by providing facilities that are safe, versatile and active. Send us a message if you wish to know more.</p>
+      <v-carousel
+      show-arrows="false"
+            cycle>
+    <v-carousel-item
+      v-for="FacilityInfo of FacilityInfo"
+      :key="FacilityInfo.Photos.formats.large"
+      :src="'https://kwc-server-strapi.herokuapp.com' + FacilityInfo.Photos.formats.large.url"
+    ></v-carousel-item>
+  </v-carousel>
+              <br>
+      <br><br>
+      <p>{{ FacilityInfo.Description }}</p>
       <br>
       <hr>
     </section>
     <div class="clr" />
   </div>
 </template>
+
+<script>
+import infoQuery from '~/apollo/info'
+export default {
+  data () {
+    return {
+      FacilityInfo: [],
+      query: ''
+    }
+  },
+  apollo: {
+    FacilityInfo: {
+      prefetch: true,
+      query: infoQuery
+    }
+  }
+}
+</script>

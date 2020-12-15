@@ -277,11 +277,14 @@ li{
           }
         .newsgrid{
             display: grid;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: 5fr 3fr;
            }
           .newsicon{
             min-height: 300px;
            margin: auto;
+          }
+          #facebookfeed{
+            margin: 20px auto;
           }
     #affiliates{
       min-height: 300px;
