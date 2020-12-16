@@ -4,17 +4,17 @@
       <h2>WHO WE ARE</h2>
       <hr>
       <v-carousel
-      show-arrows="false"
+      show-arrows-on-hover
             cycle>
     <v-carousel-item
-      v-for="FacilityInfo of FacilityInfo"
-      :key="FacilityInfo.Photos.formats.large"
-      :src="'https://kwc-server-strapi.herokuapp.com' + FacilityInfo.Photos.formats.large.url"
+      v-for="facilityInfo of facilityInfo"
+      :key="facilityInfo.Photos"
+      :src="'https://kwc-server-strapi.herokuapp.com' + facilityInfo.Photos"
     ></v-carousel-item>
   </v-carousel>
               <br>
       <br><br>
-      <p>{{ FacilityInfo.Description }}</p>
+      <p>{{ facilityInfo.Description }}</p>
       <br>
       <hr>
     </section>
@@ -27,12 +27,12 @@ import infoQuery from '~/apollo/info'
 export default {
   data () {
     return {
-      FacilityInfo: [],
+      facilityInfo: [],
       query: ''
     }
   },
   apollo: {
-    FacilityInfo: {
+    facilityInfo: {
       prefetch: true,
       query: infoQuery
     }

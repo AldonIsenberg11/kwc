@@ -2,8 +2,8 @@ query {
   facilityInfo {
     Title
     Description
-    Photos {
-      formats
-    }
+    Photos{
+      url
+      }
   }
 }
