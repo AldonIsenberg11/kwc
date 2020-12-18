@@ -15,7 +15,7 @@
         <br>
         <div class="newspreview">
           <div v-for="categories of categories" :key="categories.id" class="newscard">
-          <img class="eventicon" :src="'https://kwc-server-strapi.herokuapp.com' + categories.media.formats.thumbnail.url">
+          <img class="eventicon" :src="formattedUrl(categories.media.formats.thumbnail.url)">
            <div class="eventblurb">
             <h1>{{ categories.Name }}</h1>
             {{ categories.Date }}
@@ -37,7 +37,7 @@
         <br>
         <div class="eventpreview">
           <div v-for="event of events" :key="event.id" class="eventcard">
-          <img class="eventicon" :src="'https://kwc-server-strapi.herokuapp.com' + event.Picture.formats.thumbnail.url">
+          <img class="eventicon" :src="formattedUrl(event.Picture.formats.thumbnail.url)">
           <h1>{{ event.Title }}</h1>
           <div class="eventblurb">
             {{ event.Date }}
@@ -104,6 +104,17 @@
 import eventsQuery from '~/apollo/events'
 import newsQuery from '~/apollo/news'
 export default {
+  methods: {
+    formattedUrl: (url) => {
+      let baseUrl = 'http://localhost:1337'
+
+      if (process.env.KWC_SERVER_URL) {
+        baseUrl = process.env.KWC_SERVER_URL
+      }
+
+      return baseUrl + url
+    }
+  },
   data () {
     return {
       events: [],
