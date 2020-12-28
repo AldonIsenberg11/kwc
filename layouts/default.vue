@@ -307,7 +307,10 @@ iframe {
   width: 100%;
   min-height:250px;
   margin:  auto;
-  display:inline
+  display:inline;
+}
+.google-map {
+  box-shadow: 5px 10px 1em #888888;
 }
 .linkbanner {
   width: 80%;
@@ -516,4 +519,5 @@ select {
   grid-gap: 50px;
   grid-template-columns: 1fr 1fr;
 }
+
 </style>

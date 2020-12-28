@@ -4,7 +4,10 @@
       <h2>UPCOMING EVENTS</h2>
       <hr>
       <br>
-      <div class="eventbox">
+      <div v-if="events.length === 0">
+        Currently no events to display
+      </div>
+      <div v-else class="eventbox">
         <div v-for="event of events" :key="event.id" class="eventcard">
           <img class="eventicon" :src="'https://kwc-server-strapi.herokuapp.com' + event.Picture.formats.thumbnail.url">
           <h1>{{ event.Title }}</h1>
@@ -30,19 +33,19 @@
 </template>
 
 <script>
-import eventsQuery from '~/apollo/events'
+// import eventsQuery from '~/apollo/events'
 export default {
   data () {
     return {
       events: [],
       query: ''
     }
-  },
-  apollo: {
-    events: {
-      prefetch: true,
-      query: eventsQuery
-    }
   }
+  // apollo: {
+  //   events: {
+  //     prefetch: true,
+  //     query: eventsQuery
+  //   }
+  // }
 }
 </script>

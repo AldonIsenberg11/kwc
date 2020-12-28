@@ -11,7 +11,19 @@
         <h5 class="center">
           Kansas Wrestling Center
         </h5>
-        <br><br><br>
+        <br>
+        <iframe
+          class="google-map"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12421.17655703115!2d-94.7903587!3d38.8943885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x892dbb21abb0db5a!2sKansas%20Wrestling%20Center!5e0!3m2!1sen!2sus!4v1609184702742!5m2!1sen!2sus"
+          width="400"
+          height="300"
+          frameborder="0"
+          style="border:0;"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0">
+        </iframe>
+        <br><br>
         <p>1671 E Kansas City Rd</p>
         <p>Olathe, KS 6606</p>
         <br><br><br>
