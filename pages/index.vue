@@ -26,9 +26,7 @@
           </div>
           <!-- <div class="newscard"><div class="newsicon"><img height=100px src="../assets/boxingring.png" alt="Event"><br></div>MMA Maybe<br><br>Nov 6th. Get you tickets now. Selling out fast!</div> -->
         </div>
-        <NuxtLink to="/news" class="button">
-          READ MORE
-        </NuxtLink>
+        <v-btn :to="'/news'">READ MORE</v-btn>
       </div>
     </section>
     <section id="upcomingevents">
@@ -48,24 +46,11 @@
           </NuxtLink>
         </div>
         </div>
-        <NuxtLink to="/events" class="button2">
-          GO TO EVENTS PAGE
-        </NuxtLink>
+        <v-btn to="events">
+          Go To Events Page
+        </v-btn>
       </div>
     </section>
-    <!-- <section id="affiliates">
-      <div class="content">
-        <h2>Affiliates</h2>
-        <br>
-        <div class="linkbanner">
-          <div><img src="../assets/logo1.png" alt="Event"></div>
-          <div><img src="../assets/logo2.png" alt="Event"></div>
-          <div><img src="../assets/logo3.png" alt="Event"></div>
-          <div><img src="../assets/logo4.png" alt="Event"></div>
-          <div><img src="../assets/logo5.png" alt="Event"></div>
-        </div>
-      </div>
-    </section> -->
     <section id="quickcontact">
       <div class="content">
         <h3>Stay in the know</h3>
@@ -82,13 +67,13 @@
           </div>
           <div>
             <label>Email</label>
-            <input type="email" name="email" placeholder="champ@wrestleDB.com">
+            <input type="email" name="email" placeholder="champ@email.com">
           </div>
           <div class="button">
             <br>
-            <button type="submit" name="submit">
-              --->Join our mailing list!
-            </button>
+            <v-btn type="submit" name="submit">
+              Join our mailing list!
+            </v-btn>
           </div>
         </form>
         <br>

@@ -34,7 +34,7 @@
           </div>
           <div>
             <label>Email</label>
-            <input type="email" name="email" placeholder="champ@wrestleDB.com">
+            <input type="email" name="email" placeholder="champ@email.com">
           </div>
           <div>
             <label>Subject</label>
@@ -54,9 +54,9 @@
             <textarea name="Message" placeholder="Your message here" />
           </div>
           <div class="button">
-            <button type="submit" name="submit">
+            <v-btn>
               Submit
-            </button>
+            </v-btn>
           </div>
         </form>
       </div>
