@@ -5,7 +5,7 @@
         <div class="socialicons">
           <v-row>
             <v-col align="left" cols="12" md="4">
-              <h1> KS Wrestling Center </h1>
+              <h1>&nbsp;&nbsp;KS&nbsp;Wrestling&nbsp;Center</h1>
             </v-col>
             <v-col cols="12" md="8">
               Connect with Us!

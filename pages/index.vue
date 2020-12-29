@@ -11,7 +11,7 @@
     <!-- <div class="clr" /> -->
     <section>
       <v-row>
-        <v-col md="2"></v-col>
+        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2"></v-col>
         <v-col md="8">
           <iframe
             class="google-map"
@@ -25,7 +25,7 @@
             tabindex="0">
           </iframe>
         </v-col>
-        <v-col md="2"></v-col>
+        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2"></v-col>
       </v-row>
     </section>
     <section align ="center">
