@@ -82,7 +82,7 @@
           <input class="stayInKnow" v-model="visitorName" type="text" name="name" placeholder="Enter name">
           <input class="stayInKnow" v-model="visitorEmail" type="email" name="email" placeholder="champ@yourEmail.com">
           <br>
-          <v-btn name="submit" @click="submitInformation(visitorName, visitorEmail)">
+          <v-btn name="submit" @click="submitInformation()">
             Join our mailing list!
           </v-btn>
         </v-form>
@@ -101,17 +101,21 @@
 // import newsQuery from '~/apollo/news'
 export default {
   methods: {
-    formattedUrl: (url) => {
-      let baseUrl = 'http://localhost:1337'
+    // formattedUrl: (url) => {
+    //   let baseUrl = 'http://localhost:1337'
 
-      if (process.env.KWC_SERVER_URL) {
-        baseUrl = process.env.KWC_SERVER_URL
-      }
+    //   if (process.env.KWC_SERVER_URL) {
+    //     baseUrl = process.env.KWC_SERVER_URL
+    //   }
 
-      return baseUrl + url
-    },
-    submitInformation: (name, email) => {
-      console.log('Need to add this to the database: ', name, email)
+    //   return baseUrl + url
+    // },
+    async submitInformation () {
+      console.log('This:', this.visitorName)
+      const visitor = { name: this.visitorName, email: this.visitorEmail }
+      const result = await this.$axios.$post('/mailingList', visitor)
+      // console.log('Need to add this to the database:', result)
+      console.log('This await:', result)
     }
   },
   data () {

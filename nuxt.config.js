@@ -31,7 +31,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    
+
     // https://go.nuxtjs.dev/content
     // '@nuxt/content'
     '@nuxtjs/strapi',
@@ -39,7 +39,11 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:5051/api',
+    https: false,
+    proxy: false,
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -52,7 +56,7 @@ export default {
     entities: ['events', 'news'],
     url: 'https://kwc-server-strapi.herokuapp.com/'
   },
-  apollo: {  
+  apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: 'https://kwc-server-strapi.herokuapp.com/graphql'
