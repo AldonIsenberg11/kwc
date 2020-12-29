@@ -75,29 +75,18 @@
     </section>
     <section id="quickcontact">
       <div class="content">
-        <h3>Stay in the know</h3>
+        <h3>Stay in the know {{visitorName}}</h3>
         <br>
         <br>
-        <form id="form2">
-          <div>
-            <label>First Name</label>
-            <input type="text" name="firstName" placeholder="Enter first name">
-          </div>
-          <div>
-            <label>Last Name</label>
-            <input type="text" name="lastName" placeholder="Enter last name">
-          </div>
-          <div>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="champ@email.com">
-          </div>
-          <div class="button">
-            <br>
-            <v-btn type="submit" name="submit">
-              Join our mailing list!
-            </v-btn>
-          </div>
-        </form>
+        <v-form>
+          <input class="stayInKnow" v-model="visitorName" type="text" name="name" placeholder="Enter name">
+          <input class="stayInKnow" v-model="visitorEmail" type="email" name="email" placeholder="champ@yourEmail.com">
+          <br>
+          <v-btn name="submit" @click="submitInformation(visitorName, visitorEmail)">
+            Join our mailing list!
+          </v-btn>
+        </v-form>
+
         <br>
         <br>
       </div>
@@ -120,10 +109,15 @@ export default {
       }
 
       return baseUrl + url
+    },
+    submitInformation: (name, email) => {
+      console.log('Need to add this to the database: ', name, email)
     }
   },
   data () {
     return {
+      visitorName: '',
+      visitorEmail: '',
       events: [
       ],
       query: '',
@@ -144,5 +138,7 @@ export default {
 </script>
 
 <style>
-
+.stayInKnow {
+  color: white;
+}
 </style>
