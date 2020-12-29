@@ -185,11 +185,11 @@ h5 {
   grid-template-columns: .5fr 1fr 1fr .5fr;
   grid-template-rows: 1fr;
 }
-#biglogo bwords {
+#biglogo span {
   font-size: 35px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 800;
-  display: block;
+  display: center;
   color: white;
   margin: auto;
   padding-top: 30px;
