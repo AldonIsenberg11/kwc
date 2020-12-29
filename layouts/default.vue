@@ -189,7 +189,7 @@ h5 {
   font-size: 35px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 800;
-  display: center;
+  display: block;
   color: white;
   margin: auto;
   padding-top: 30px;
