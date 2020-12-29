@@ -25,7 +25,7 @@
         </iframe>
         <br><br>
         <p>1671 E Kansas City Rd</p>
-        <p>Olathe, KS 6606</p>
+        <p>Olathe, KS 66061</p>
         <br><br><br>
         <p>(913)555-0122</p><br>
         <p>(913)555-0123 (fax)</p>

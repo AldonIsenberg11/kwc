@@ -152,7 +152,7 @@ h2 {
   padding-bottom: 5px;
   padding-left: 10px;
   text-align: left;
-  text-shadow: 2px 3px 4px #000000;
+  text-shadow: 1px 1px 1px #000000;
 }
 h5 {
   font-weight: 600;
@@ -162,7 +162,7 @@ h5 {
   padding-bottom: 5px;
   padding-left: 10px;
   text-align: left;
-  text-shadow: 2px 3px 4px #000000;
+  text-shadow: 1px 1px 1px #000000;
 }
 .center{
   text-align: center;
