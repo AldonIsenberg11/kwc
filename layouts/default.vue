@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app>
     <header>
       <div>
         <div class="socialicons">
@@ -64,7 +64,7 @@
         &copy; {{ new Date().getFullYear() }} — KsWrestlingCenter.com
       </h6>
     </footer>
-  </div>
+  </v-app>
 </template>
 
 <style>
