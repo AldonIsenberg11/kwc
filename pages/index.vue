@@ -2,10 +2,10 @@
   <div>
     <section id="banner">
       <div id="biglogo">
-        <div />
-        <bwords>Winning is the goal. <br><br>Wrestling is the journey.<br><br>Are you ready?</bwords>
-        <img src="../assets/largelogo.png">
-        <div />
+        <div v-show="$vuetify.breakpoint.mdAndUp"/>
+        <span>Winning is the goal. <br><br>Wrestling is the journey.<br><br>Are you ready?</span>
+        <img v-show="$vuetify.breakpoint.mdAndUp" src="../assets/largelogo.png">
+        <div v-show="$vuetify.breakpoint.mdAndUp"/>
       </div>
     </section>
     <!-- <div class="clr" /> -->
