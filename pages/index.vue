@@ -110,9 +110,10 @@ export default {
 
     //   return baseUrl + url
     // },
-    async submitInformation () {
+    // async submitInformation () {
+    submitInformation () {
       const visitor = { name: this.visitorName, email: this.visitorEmail }
-      console.log('visitor:', this.visitorName)
+      console.log('visitor:', visitor)
       // const result = await this.$axios.$post('/mailingList', visitor)
       // console.log('Need to add this to the database:', result)
       // console.log('This await:', result)
