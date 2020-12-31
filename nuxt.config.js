@@ -1,4 +1,7 @@
 
+// Eventually we will want to upgrade local environment to SSL as well:
+// See --> https://letsencrypt.org/docs/certificates-for-localhost/
+
 const serverMiddleware = process.env.NODE_ENV === 'production'
   ? ["redirect-ssl"]
   : []
