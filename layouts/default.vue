@@ -219,7 +219,7 @@ h5 {
   background-position: center center;
   background-size: cover;
   width: 100%;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   border-top: 5px rgb(128, 0, 0) solid ;
   border-bottom: 5px rgb(128, 0, 0) solid ;
   margin: auto;
