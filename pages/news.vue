@@ -3,7 +3,7 @@
     <h2>LATEST NEWS</h2>
     <v-row>
       <v-col cols="12" md="3">
-        <div></div>
+        <div />
       </v-col>
       <v-col cols="12" md="7">
         <iframe
@@ -13,11 +13,11 @@
           style="border:none;overflow:hidden;"
           frameborder="0"
           allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        />
       </v-col>
       <v-col cols="12" md="2">
-        <div></div>
+        <div />
       </v-col>
     </v-row>
   </v-container>

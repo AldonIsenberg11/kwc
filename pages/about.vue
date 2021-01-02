@@ -3,16 +3,14 @@
     <section id="about">
       <h2>WHO WE ARE</h2>
       <hr>
-      <v-carousel
-      show-arrows-on-hover
-            cycle>
-    <v-carousel-item
-      v-for="facilityInfo of facilityInfo"
-      :key="facilityInfo.Photos"
-      :src="'https://kwc-server-strapi.herokuapp.com' + facilityInfo.Photos"
-    ></v-carousel-item>
+      <v-carousel show-arrows-on-hovercycle>
+      <v-carousel-item
+        v-for="facilityInfo of facilityInfo"
+        :key="facilityInfo.Photos"
+        :src="'https://kwc-server-strapi.herokuapp.com' + facilityInfo.Photos"
+      ></v-carousel-item>
   </v-carousel>
-              <br>
+      <br>
       <br><br>
       <p>{{ facilityInfo.Description }}</p>
       <br>

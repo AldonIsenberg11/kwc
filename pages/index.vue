@@ -2,16 +2,16 @@
   <div>
     <section id="banner">
       <div id="biglogo">
-        <div v-show="$vuetify.breakpoint.mdAndUp"/>
+        <div v-show="$vuetify.breakpoint.mdAndUp" />
         <span>Winning is the goal. <br><br>Wrestling is the journey.<br><br>Are you ready?</span>
         <img v-show="$vuetify.breakpoint.mdAndUp" src="../assets/largelogo.png">
-        <div v-show="$vuetify.breakpoint.mdAndUp"/>
+        <div v-show="$vuetify.breakpoint.mdAndUp" />
       </div>
     </section>
     <!-- <div class="clr" /> -->
     <section>
       <v-row>
-        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2"></v-col>
+        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2" />
         <v-col md="8">
           <iframe
             class="google-map"
@@ -22,14 +22,16 @@
             style="border:0;"
             allowfullscreen=""
             aria-hidden="false"
-            tabindex="0">
-          </iframe>
+            tabindex="0"
+          />
         </v-col>
-        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2"></v-col>
+        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2" />
       </v-row>
     </section>
-    <section align ="center">
-      <v-btn class="google-map" to="news">Read Latest News</v-btn>
+    <section align="center">
+      <v-btn class="google-map" to="news">
+        Read Latest News
+      </v-btn>
     </section>
     <!-- <section id="welcome">
       <div class="content">
@@ -57,16 +59,16 @@
         <br>
         <div class="eventpreview">
           <div v-for="event of events" :key="event.id" class="eventcard">
-          <img class="eventicon" :src="event.imageUrl">
-          <h1>{{ event.title }}</h1>
-          <div class="eventblurb">
-            {{ event.date }}
-            <br>
+            <img class="eventicon" :src="event.imageUrl">
+            <h1>{{ event.title }}</h1>
+            <div class="eventblurb">
+              {{ event.date }}
+              <br>
+            </div>
+            <NuxtLink to="/events" class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
+              MORE INFO
+            </NuxtLink>
           </div>
-          <NuxtLink to="/events" class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
-            MORE INFO
-          </NuxtLink>
-        </div>
         </div>
         <v-btn to="events">
           Go To Events Page
@@ -75,12 +77,12 @@
     </section>
     <section id="quickcontact">
       <div class="content">
-        <h3>Stay in the know {{visitorName}}</h3>
+        <h3>Stay in the know</h3>
         <br>
         <br>
         <v-form>
-          <input class="stayInKnow" v-model="visitorName" type="text" name="name" placeholder="Enter name">
-          <input class="stayInKnow" v-model="visitorEmail" type="email" name="email" placeholder="champ@yourEmail.com">
+          <input v-model="visitorName" class="stayInKnow" type="text" name="name" placeholder="Enter name">
+          <input v-model="visitorEmail" class="stayInKnow" type="email" name="email" placeholder="champ@yourEmail.com">
           <br>
           <v-btn name="submit" @click="submitInformation()">
             Join our mailing list!
@@ -100,6 +102,16 @@
 // import eventsQuery from '~/apollo/events'
 // import newsQuery from '~/apollo/news'
 export default {
+  data () {
+    return {
+      visitorName: '',
+      visitorEmail: '',
+      events: [
+      ],
+      query: '',
+      categories: []
+    }
+  },
   methods: {
     // formattedUrl: (url) => {
     //   let baseUrl = 'http://localhost:1337'
@@ -113,20 +125,11 @@ export default {
     // async submitInformation () {
     submitInformation () {
       const visitor = { name: this.visitorName, email: this.visitorEmail }
+      // eslint-disable-next-line
       console.log('visitor:', visitor)
       // const result = await this.$axios.$post('/mailingList', visitor)
       // console.log('Need to add this to the database:', result)
       // console.log('This await:', result)
-    }
-  },
-  data () {
-    return {
-      visitorName: '',
-      visitorEmail: '',
-      events: [
-      ],
-      query: '',
-      categories: []
     }
   }
   // apollo: {
