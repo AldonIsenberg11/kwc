@@ -21,7 +21,7 @@
           </v-btn>
         </div>
       </div>
-      <navbar class="nav">
+      <div class="nav">
         <NuxtLink to="/">
           <img class="logo-img" height="100px" src="../assets/kwclogo.png" alt="KWC Logo">
         </NuxtLink>
@@ -50,7 +50,7 @@
             Contact
           </NuxtLink>
         </li>
-      </navbar>
+      </div>
     </header>
     <main>
       <Nuxt />
