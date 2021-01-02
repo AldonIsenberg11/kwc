@@ -3,7 +3,7 @@
     <section id="about">
       <h2>WHO WE ARE</h2>
       <hr>
-      <v-carousel show-arrows>
+      <v-carousel :show-arrows="false" cycle>
         <v-carousel-item
           v-for="(pic, index) in pictures"
           :key="index"
@@ -42,3 +42,7 @@ export default {
   // }
 }
 </script>
+
+<style scoped>
+
+</style>
