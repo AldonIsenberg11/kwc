@@ -27,9 +27,9 @@
           <p>1671 E Kansas City Rd</p>
           <p>Olathe, KS 66061</p>
           <br><br><br>
-          <p>(719)322-2718</p>
+          <p>(913)490-3140</p>
           <br><br><br>
-          <p>linda@kswrestlingcenter.com</p>
+          <p>services@kswrestlingcenter.com</p>
         </div>
         <div id="aside2" class="aside2">
           <form id="form">
