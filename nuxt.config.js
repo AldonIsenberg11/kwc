@@ -53,6 +53,12 @@ export default {
     proxy: false,
   },
 
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.KWC_SERVER_URL
+    }
+  },
+
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 
