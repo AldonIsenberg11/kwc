@@ -83,6 +83,17 @@
         <v-form>
           <input v-model="visitorName" class="stayInKnow" type="text" name="name" placeholder="Enter name">
           <input v-model="visitorEmail" class="stayInKnow" type="email" name="email" placeholder="champ@yourEmail.com">
+          <!-- <v-text-field
+            label="Name"
+            v-model="visitorName2"
+          ></v-text-field>
+          <v-text-field
+            label="Email of Contact Person"
+            type="email"
+            v-model="visitorEmail2"
+            :rules="emailRules"
+            required
+          ></v-text-field> -->
           <br>
           <v-btn name="submit" @click="submitInformation()">
             Join our mailing list!
@@ -95,41 +106,92 @@
       <br>
       <div class="clr" />
     </section>
+    <v-snackbar
+      v-model="successfulSnackbar"
+    >
+      SUCCESSFULLY ADDED {{visitorEmail}} TO OUR MAILING LIST!!!
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="green"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar
+      v-model="errorSnackbar"
+    >
+      {{errorMessage}}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="red"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
 <script>
 // import eventsQuery from '~/apollo/events'
 // import newsQuery from '~/apollo/news'
+import Joi from 'joi'
 export default {
   data () {
     return {
       visitorName: '',
       visitorEmail: '',
+      visitorName2: '',
+      visitorEmail2: '',
+      errorMessage: '',
       events: [
       ],
       query: '',
+      successfulSnackbar: false,
+      errorSnackbar: false,
       categories: []
     }
   },
   methods: {
-    // formattedUrl: (url) => {
-    //   let baseUrl = 'http://localhost:1337'
-
-    //   if (process.env.KWC_SERVER_URL) {
-    //     baseUrl = process.env.KWC_SERVER_URL
-    //   }
-
-    //   return baseUrl + url
-    // },
-    // async submitInformation () {
     submitInformation () {
-      const visitor = { name: this.visitorName, email: this.visitorEmail }
-      // eslint-disable-next-line
-      console.log('visitor:', visitor)
-      // const result = await this.$axios.$post('/mailingList', visitor)
-      // console.log('Need to add this to the database:', result)
-      // console.log('This await:', result)
+      const validationError = this.isValidMarketingEntry()
+
+      if (validationError) {
+        this.errorMessage = validationError || 'Please enter your name'
+        this.errorSnackbar = true
+        return
+      }
+      const visitor = { name: this.visitorName, email: this.visitorEmail } // REMOVE THIS ONE AFTER FORMAT
+      this.$axios.$post('/mailingList', visitor)
+        .then(() => {
+          this.successfulSnackbar = true
+        })
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.log('AxiosError: ', error)
+        })
+    },
+    isValidMarketingEntry () {
+      const marketingEntrySchema = Joi.object({
+        visitorName: Joi.string().min(3).max(30).required(),
+        visitorEmail: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io'] } }).required()
+      })
+
+      const { error } = marketingEntrySchema.validate({
+        visitorName: this.visitorName,
+        visitorEmail: this.visitorEmail
+      })
+
+      return error || null // return error if error else return null
     }
   }
   // apollo: {
