@@ -172,8 +172,13 @@ export default {
       }
       const visitor = { name: this.visitorName, email: this.visitorEmail } // REMOVE THIS ONE AFTER FORMAT
       this.$axios.$post('/mailingList', visitor)
-        .then(() => {
-          this.successfulSnackbar = true
+        .then((result) => {
+          if (result.error) {
+            this.errorMessage = result.error
+            this.errorSnackbar = true
+          } else {
+            this.successfulSnackbar = true
+          }
         })
         .catch((error) => {
           // eslint-disable-next-line
