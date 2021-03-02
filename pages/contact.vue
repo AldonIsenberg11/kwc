@@ -37,19 +37,19 @@
             <br>
             <div>
               <label>First Name</label>
-              <input type="text" name="firstName" placeholder="Enter first name"></input>
+              <input v-model="contactFirstName" type="text" name="firstName" placeholder="Enter first name">
             </div>
             <div>
               <label>Last Name</label>
-              <input type="text" name="lastName" placeholder="Enter last name"></input>
+              <input v-model="contactLastName" type="text" name="lastName" placeholder="Enter last name">
             </div>
             <div>
               <label>Email</label>
-              <input type="email" name="email" placeholder="champ@email.com"></input>
+              <input v-model="contactEmail" type="email" name="email" placeholder="champ@email.com">
             </div>
             <div>
               <label>Subject</label>
-              <select name="Subject">
+              <select v-model="contactSubject" name="Subject">
                 <option value="General">
                   General Question
                 </option>
@@ -62,10 +62,10 @@
               </select>
             </div>
             <div>
-              <textarea name="Message" placeholder="Your message here" />
+              <textarea v-model="contactMessage" name="Message" placeholder="Your message here" />
             </div>
             <div class="button">
-              <v-btn> Submit </v-btn>
+              <v-btn @click="submitInformation()"> Submit </v-btn>
             </div>
           </form>
         </div>
@@ -74,3 +74,64 @@
     <div class="clr" />
   </div>
 </template>
+<script>
+import Joi from 'joi'
+export default {
+  data () {
+    return {
+      contactFirstName: '',
+      contactLastName: '',
+      contactEmail: '',
+      contactSubject: '',
+      contactMessage: '',
+      errorMessage: ''
+    }
+  },
+  methods: {
+    submitInformation () {
+      // const validationError = this.isValidMarketingEntry()
+
+      // if (validationError) {
+      //   this.errorMessage = validationError || 'Please enter your name'
+      //   this.errorSnackbar = true
+      //   return
+      // }
+      const contact = {
+        firstName: this.contactFirstName,
+        lastName: this.contactlastName,
+        email: this.contactEmail,
+        subject: this.contactSubject,
+        message: this.contactMessage
+      }
+      console.log(contact)
+      this.$axios.$post('/contactForm', contact)
+        .then((result) => {
+          console.log('n/n/n/results', result, '/n/n/end')
+          // if (result.error) {
+          //   this.errorMessage = result.error
+          //   this.errorSnackbar = true
+          // } else {
+          //   this.successfulSnackbar = true
+          // }
+        })
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.log('AxiosError: ', error)
+        })
+    },
+    isValidMarketingEntry () {
+      const marketingEntrySchema = Joi.object({
+        visitorName: Joi.string().min(3).max(30).required(),
+        visitorEmail: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org', 'mail'] } }).required()
+      })
+
+      const { error } = marketingEntrySchema.validate({
+        visitorName: this.visitorName,
+        visitorEmail: this.visitorEmail
+      })
+
+      return error || null // return error if error else return null
+    }
+  }
+}
+</script>

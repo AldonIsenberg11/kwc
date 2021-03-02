@@ -188,7 +188,7 @@ export default {
     isValidMarketingEntry () {
       const marketingEntrySchema = Joi.object({
         visitorName: Joi.string().min(3).max(30).required(),
-        visitorEmail: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io'] } }).required()
+        visitorEmail: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org'] } }).required()
       })
 
       const { error } = marketingEntrySchema.validate({
