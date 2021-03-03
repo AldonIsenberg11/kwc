@@ -8,73 +8,57 @@
         <div v-show="$vuetify.breakpoint.mdAndUp" />
       </div>
     </section>
-    <!-- <div class="clr" /> -->
-    <section>
-      <v-row>
-        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2" />
-        <v-col md="8">
+    <div class="twocolumn">
+      <div id="leftside">
+        <section>
           <iframe
-            class="google-map"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12421.17655703115!2d-94.7903587!3d38.8943885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x892dbb21abb0db5a!2sKansas%20Wrestling%20Center!5e0!3m2!1sen!2sus!4v1609179719983!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            frameborder="0"
-            style="border:0;"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          />
-        </v-col>
-        <v-col v-show="$vuetify.breakpoint.mdAndUp" md="2" />
-      </v-row>
-    </section>
-    <section align="center">
-      <v-btn class="google-map" to="news">
-        Read Latest News
-      </v-btn>
-    </section>
-    <!-- <section id="welcome">
-      <div class="content">
-        <h2>Latest News</h2>
-        <br>
-        <div class="newspreview">
-          <div v-for="categories of categories" :key="categories.id" class="newscard">
-          <img class="eventicon" :src="formattedUrl(categories.media.formats.thumbnail.url)">
-           <div class="eventblurb">
-            <h1>{{ categories.Name }}</h1>
-            {{ categories.Date }}
+                class="google-map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12421.17655703115!2d-94.7903587!3d38.8943885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x892dbb21abb0db5a!2sKansas%20Wrestling%20Center!5e0!3m2!1sen!2sus!4v1609179719983!5m2!1sen!2sus"
+                width="500"
+                height="450"
+                frameborder="0"
+                style="border:0;"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              />
             <br>
             <br>
-            {{ categories.Description }}
-          </div>
-          </div>
-          <div class="newscard"><div class="newsicon"><img height=100px src="../assets/boxingring.png" alt="Event"><br></div>MMA Maybe<br><br>Nov 6th. Get you tickets now. Selling out fast!</div>
-        </div>
-        <v-btn :to="'/news'">READ MORE</v-btn>
-      </div>
-    </section> -->
-    <section id="upcomingevents">
-      <div class="content">
-        <h3>Upcoming Events</h3>
-        <br>
-        <div class="eventpreview">
-          <div v-for="event of events" :key="event.id" class="eventcard">
-            <img class="eventicon" :src="event.imageUrl">
-            <h1>{{ event.title }}</h1>
-            <div class="eventblurb">
-              {{ event.date }}
-              <br>
+          <div>
+            <h2>Upcoming Events</h2>
+            <br>
+            <div class="eventpreview">
+              <div v-for="event of events" :key="event.id" class="eventcard">
+                <img class="eventicon" :src="event.imageUrl">
+                <h1>{{ event.name }}</h1>
+                <div class="eventblurb">
+                  {{ event.date }}
+                  <br>
+                </div>
+                <NuxtLink to="/events" class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
+                  MORE INFO
+                </NuxtLink>
+              </div>
             </div>
-            <NuxtLink to="/events" class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
-              MORE INFO
-            </NuxtLink>
+            <v-btn to="events" class=".button--grey">
+              Go To Events Page
+            </v-btn>
           </div>
-        </div>
-        <v-btn to="events">
-          Go To Events Page
-        </v-btn>
+        </section>
       </div>
-    </section>
+        <section id="rightside">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkswrestlingcenter&tabs=timeline&width=400&height=1000&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId"
+                width="400"
+                height="1000"
+                style="border:none;overflow:hidden"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+              </iframe>
+        </section>
+    </div>
     <section id="quickcontact">
       <div class="content">
         <h3>Stay in the know</h3>
@@ -99,13 +83,11 @@
             Join our mailing list!
           </v-btn>
         </v-form>
-
         <br>
         <br>
       </div>
       <br>
       <div class="clr" />
-    </section>
     <v-snackbar
       v-model="successfulSnackbar"
     >
@@ -138,6 +120,7 @@
         </v-btn>
       </template>
     </v-snackbar>
+    </section>
   </div>
 </template>
 
@@ -154,6 +137,9 @@ export default {
       visitorEmail2: '',
       errorMessage: '',
       events: [
+        { id: 1, name: 'Event 1', date: 'today', eventFlyer: 'http://eventURL.pdf' },
+        { id: 2, name: 'JOCO test', date: 'tomorrow', eventFlyer: 'http://eventURL.pdf' },
+        { id: 3, name: 'Championship', date: 'Feb. 24th 2021', eventFlyer: 'http://eventURL.pdf' }
       ],
       query: '',
       successfulSnackbar: false,
@@ -212,8 +198,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .stayInKnow {
   color: white;
+}
+.twocolumn{
+display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-gap: 10px;
 }
 </style>

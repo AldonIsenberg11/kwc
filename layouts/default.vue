@@ -32,7 +32,7 @@
         </li>
         <li>
           <NuxtLink to="/about" class="button">
-            Facility
+            About Us
           </NuxtLink>
         </li>
         <li>
@@ -42,7 +42,7 @@
         </li>
         <li>
           <NuxtLink to="/news" class="button">
-            News
+            Picture Gallery
           </NuxtLink>
         </li>
         <li>
@@ -85,6 +85,7 @@ html {
 header {
   position: fixed;
   width: 100%;
+  z-index: 10;
   /* background-color: white; */
 }
 
@@ -108,6 +109,7 @@ section {
   color: black;
   width: 100%;
   height: 140%;
+  z-index: 10;
 }
 li {
   display: inline;
@@ -222,19 +224,17 @@ h5 {
   /* border-radius: 5px; */
   border-top: 5px rgb(128, 0, 0) solid ;
   border-bottom: 5px rgb(128, 0, 0) solid ;
-  margin: auto;
-  padding:10px 50px 20px 50px;
+  margin: 20px;
+  padding:10px 10px 20px 50px;
   box-shadow: 3px 3px 4px #000000;
 }
 .eventpreview {
   display: grid;
-  min-height: 200px;
-  width: 60%;
-  margin: auto;
-  padding-bottom: 20px;
-  grid-gap: 50px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr
+  width: 100%;
+  margin: 20px;
+  padding-bottom: 10px;
+  grid-gap: 40px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 .eventcard {
   border: 0px solid #f2f2f2;
@@ -245,12 +245,11 @@ h5 {
   width: 100%;
 }
 .eventicon {
-  background-image: linear-gradient(to bottom right, #100041,#240090);
   margin: auto;
 }
 .eventblurb {
   margin: auto;
-  padding: 20px;
+  padding: 10px;
 }
 .newspreview {
   display: grid;
@@ -296,17 +295,26 @@ h5 {
   min-height: 300px;
   width: 100%;
   margin: auto;
-  background-image: linear-gradient(to bottom right, #100041,#240090);
-  border-bottom: 40px rgb(128, 0, 0) solid ;
+  background-image: url("../assets/mavsgym.png");
+  background-blend-mode: soft-light;
+  background-color: #181818;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  /* border-radius: 5px; */
+  border-top: 5px rgb(128, 0, 0) solid ;
+  border-bottom: 5px rgb(128, 0, 0) solid ;
+  margin: 20px;
+  padding:10px 10px 20px 50px;
+  box-shadow: 3px 3px 4px #000000;
 }
 iframe {
   width: 100%;
-  min-height:250px;
   margin:  auto;
-  display:inline;
 }
 .google-map {
   box-shadow: 5px 10px 1em #888888;
+  width: 90%;
 }
 .linkbanner {
   width: 80%;
@@ -478,6 +486,7 @@ select {
   text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
+  z-index: -15;
 }
 
 .button--grey:hover {

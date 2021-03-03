@@ -72,6 +72,38 @@
       </div>
     </div>
     <div class="clr" />
+    <v-snackbar
+      v-model="successfulSnackbar"
+    >
+      Message Sent!
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="green"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+    <v-snackbar
+      v-model="errorSnackbar"
+    >
+      {{errorMessage}}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="red"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 <script>
@@ -84,21 +116,23 @@ export default {
       contactEmail: '',
       contactSubject: '',
       contactMessage: '',
-      errorMessage: ''
+      errorMessage: '',
+      successfulSnackbar: false,
+      errorSnackbar: false
     }
   },
   methods: {
     submitInformation () {
-      // const validationError = this.isValidMarketingEntry()
+      const validationError = this.isValidMarketingEntry()
 
-      // if (validationError) {
-      //   this.errorMessage = validationError || 'Please enter your name'
-      //   this.errorSnackbar = true
-      //   return
-      // }
+      if (validationError) {
+        this.errorMessage = validationError || 'Please enter your name'
+        this.errorSnackbar = true
+        return
+      }
       const contact = {
         firstName: this.contactFirstName,
-        lastName: this.contactlastName,
+        lastName: this.contactLastName,
         email: this.contactEmail,
         subject: this.contactSubject,
         message: this.contactMessage
@@ -107,12 +141,12 @@ export default {
       this.$axios.$post('/contactForm', contact)
         .then((result) => {
           console.log('n/n/n/results', result, '/n/n/end')
-          // if (result.error) {
-          //   this.errorMessage = result.error
-          //   this.errorSnackbar = true
-          // } else {
-          //   this.successfulSnackbar = true
-          // }
+          if (result.error) {
+            this.errorMessage = result.error
+            this.errorSnackbar = true
+          } else {
+            this.successfulSnackbar = true
+          }
         })
         .catch((error) => {
           // eslint-disable-next-line
@@ -121,13 +155,15 @@ export default {
     },
     isValidMarketingEntry () {
       const marketingEntrySchema = Joi.object({
-        visitorName: Joi.string().min(3).max(30).required(),
-        visitorEmail: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org', 'mail'] } }).required()
+        firstName: Joi.string().min(2).max(30).required(),
+        lastName: Joi.string().min(3).max(30).required(),
+        email: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org', 'mail'] } }).required()
       })
 
       const { error } = marketingEntrySchema.validate({
-        visitorName: this.visitorName,
-        visitorEmail: this.visitorEmail
+        firstName: this.contactFirstName,
+        lastName: this.contactLastName,
+        email: this.contactEmail
       })
 
       return error || null // return error if error else return null
