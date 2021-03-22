@@ -146,6 +146,11 @@ export default {
             this.errorSnackbar = true
           } else {
             this.successfulSnackbar = true
+            this.contactFirstName = null
+            this.contactLastName = null
+            this.contactEmail = null
+            this.contactSubject = null
+            this.contactMessage = null
           }
         })
         .catch((error) => {
@@ -157,13 +162,17 @@ export default {
       const marketingEntrySchema = Joi.object({
         firstName: Joi.string().min(2).max(30).required(),
         lastName: Joi.string().min(3).max(30).required(),
-        email: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org', 'mail'] } }).required()
+        email: Joi.string().email({ tlds: { allow: ['com', 'net', 'gov', 'io', 'edu', 'org', 'mail'] } }).required(),
+        subject: Joi.string().min(2).max(30).required(),
+        message: Joi.string().min(2).max(100).required()
       })
 
       const { error } = marketingEntrySchema.validate({
         firstName: this.contactFirstName,
         lastName: this.contactLastName,
-        email: this.contactEmail
+        email: this.contactEmail,
+        subject: this.contactSubject,
+        message: this.contactMessage
       })
 
       return error || null // return error if error else return null
