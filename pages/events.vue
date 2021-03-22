@@ -18,8 +18,17 @@
             {{ event.description }}
             <br>
             <br>
-          </div>
+          <a v-if="event.signup" :href="event.signup" target="__blank">
+                  SIGN UP
+                </a>
+                <br>
+          <a v-if="event.eventFlyer" :href="event.eventFlyer" target="__blank">
+                  VIEW FLYER
+                </a>
+                <br>
         </div>
+        </div>
+        <br>
           <div>
           <!-- comment out until needed to create event page -->
           <!-- <div class="moreInfoButton" @click="$router.push(`/events/${event.id}`)">
@@ -41,8 +50,9 @@ export default {
   data () {
     return {
       events: [
-        { id: 1, name: 'Diamonds in the Rough', date: 'March 20-21, 2021', eventFlyer: 'http://eventURL.pdf', description: 'All girls divisions k-12.' + '\n' + 'Registration: $50 per wrestler until 3/18/21, $75 per wrestler after 3/18/21.  Contact Linda Weedon @ 719-322-2718 for more info.' },
-        { id: 2, name: 'Folkstyle, Freestyle & Greco Training Club', date: 'Ongoing', eventFlyer: 'http://eventURL.pdf', description: 'Training in Freestyle, Greco and Folkstyle wrestling in Olathe, Kansas. Our club is designed to provide top tier training and coaching to athletes of all age groups. We are offering training opportunities throughout the duration of the spring and summer. Contact us for more info.' }
+        { id: 1, name: 'Diamonds in the Rough', date: 'TBD', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629255132-Diamonds_in_the_Rough.pdf', description: 'All girls divisions k-12.' + '\n' + 'Registration: $50 per wrestler until 3/18/21, $75 per wrestler after 3/18/21.  Contact Linda Weedon @ 719-322-2718 for more info.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195846132' },
+        { id: 2, name: 'KCTC Freestyle Open', date: '04/24/2021', eventFlyer: '', description: 'First annual KCTC freestyle tournament. Open to wrestlers ages 8 to 18. Girls and boys divisions.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
+        { id: 2, name: 'KCTC Greco Open', date: '04/24/2021', eventFlyer: '', description: 'First annual KCTC greco tournament. Open to wrestlers ages 8 to 18.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' }
       ],
       query: ''
     }

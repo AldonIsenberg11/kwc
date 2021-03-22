@@ -31,13 +31,13 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/about" class="button">
-            About Us
+          <NuxtLink to="/events" class="button">
+            Events
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/events" class="button">
-            Events
+          <NuxtLink to="/about" class="button">
+            About
           </NuxtLink>
         </li>
         <li>
