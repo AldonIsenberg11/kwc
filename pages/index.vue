@@ -129,6 +129,18 @@
 // import newsQuery from '~/apollo/news'
 import Joi from 'joi'
 export default {
+  async created () {
+    try {
+      this.events = await this.$axios.$get('/events/nextThree')
+    } catch (err) {
+      console.log({ err })
+      this.events = [
+        { id: 1, name: 'Event 1', date: 'today', eventFlyer: 'http://eventURL.pdf' },
+        { id: 2, name: 'JOCO test', date: 'tomorrow', eventFlyer: 'http://eventURL.pdf' },
+        { id: 3, name: 'Championship', date: 'Feb. 24th 2021', eventFlyer: 'http://eventURL.pdf' }
+      ]
+    }
+  },
   data () {
     return {
       visitorName: '',
