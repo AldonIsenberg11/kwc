@@ -42,7 +42,7 @@
         </li>
         <li>
           <NuxtLink to="/news" class="button">
-            Picture Gallery
+            Social Media
           </NuxtLink>
         </li>
         <li>
@@ -240,7 +240,7 @@ h5 {
   border: 0px solid #f2f2f2;
   border-radius: 0px;
   background-color: #ffffff;
-  box-shadow: 3px 3px 4px #000000;
+  box-shadow: 5px 10px 1em #888888;
   text-align: center;
   width: 100%;
 }
@@ -311,6 +311,7 @@ h5 {
 iframe {
   width: 100%;
   margin:  auto;
+  box-shadow: 5px 10px 1em #888888;
 }
 .google-map {
   box-shadow: 5px 10px 1em #888888;
