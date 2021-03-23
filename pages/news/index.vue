@@ -24,6 +24,13 @@
 </template>
 
 <script>
+export default {
+  head () {
+    return {
+      title: 'Social Media'
+    }
+  }
+}
 </script>
 
 <style>

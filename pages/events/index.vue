@@ -47,6 +47,11 @@
 
 <script>
 export default {
+  head () {
+    return {
+      title: 'Events'
+    }
+  },
   data () {
     return {
       events: [

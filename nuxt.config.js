@@ -9,11 +9,11 @@ const serverMiddleware = process.env.NODE_ENV === 'production'
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: "ksWrestlingCenter",
+    title: "KS Wrestling Center",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "default", name: "default", content: "KWC - Kansas Wrestling Center. Wrestling and MMA driven events are hosted here. Check out our events page for more info." }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },

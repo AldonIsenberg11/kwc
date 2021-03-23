@@ -22,6 +22,11 @@
 <script>
 // import infoQuery from '~/apollo/info'
 export default {
+  head () {
+    return {
+      title: 'About Us'
+    }
+  },
   data () {
     return {
       pictures: [

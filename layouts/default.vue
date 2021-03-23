@@ -63,6 +63,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  head () {
+    return {
+      titleTemplate: 'KWC - %s',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'KWC - Kansas Wrestling Center. Our facility houses 20 full size wrestling mats. We are also home to the KCTC wrestling club.'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
