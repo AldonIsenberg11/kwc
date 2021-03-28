@@ -109,6 +109,11 @@
 <script>
 import Joi from 'joi'
 export default {
+  head () {
+    return {
+      title: 'Contact Us'
+    }
+  },
   data () {
     return {
       contactFirstName: '',
