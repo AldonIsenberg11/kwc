@@ -36,8 +36,8 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/about" class="button">
-            About
+          <NuxtLink to="/club" class="button">
+            Club
           </NuxtLink>
         </li>
         <li>
