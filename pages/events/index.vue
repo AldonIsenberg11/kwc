@@ -9,7 +9,7 @@
       </div>
       <div v-else class="eventbox">
         <div v-for="event of events" :key="event.id" class="eventcard">
-          <img class="eventicon" :src="'/assets/kwclogo.png'">
+          <img class="eventicon" :src="event.logoUrl">
           <h1>{{ event.name }}</h1>
           <div class="eventblurb">
             {{ event.date }}
@@ -55,9 +55,9 @@ export default {
   data () {
     return {
       events: [
-        { id: 1, name: 'KCTC Freestyle Open', date: '04/24/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC freestyle tournament. Open to wrestlers ages 8 to 18. Girls and boys divisions.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
-        { id: 2, name: 'KCTC Greco Open', date: '04/24/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC greco tournament. Open to wrestlers ages 8 to 18.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
-        { id: 3, name: 'Diamonds in the Rough', date: '06/18/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629255132-Diamonds_in_the_Rough.pdf', description: 'All girls divisions k-12.' + '\n' + 'Registration: $50 per wrestler until 3/18/21, $75 per wrestler after 3/18/21.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195846132' }
+        // { id: 1, name: 'KCTC Freestyle Open', date: '04/24/2021', logoUrl: '/assets/kctc/kctc_logo.png', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC freestyle tournament. Open to wrestlers ages 8 to 18. Girls and boys divisions.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
+        // { id: 2, name: 'KCTC Greco Open', date: '04/24/2021', logoUrl: '/assets/kctc/kctc_logo.png', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC greco tournament. Open to wrestlers ages 8 to 18.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
+        { id: 3, name: 'Diamonds in the Rough', date: '06/18/2021', logoUrl: '/assets/kwclogo.png', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629255132-Diamonds_in_the_Rough.pdf', description: 'All girls divisions k-12.' + '\n' + 'Registration: $50 per wrestler until 3/18/21, $75 per wrestler after 3/18/21.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195846132' }
       ],
       query: ''
     }
