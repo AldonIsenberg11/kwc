@@ -26,10 +26,10 @@
           <br><br><br>
           <p>1671 E Kansas City Rd</p>
           <p>Olathe, KS 66061</p>
-          <br><br><br>
-          <p>(913)490-3140</p>
-          <br><br><br>
-          <p>services@kswrestlingcenter.com</p>
+          <br><br>
+          <p>Adam Venegas</p>
+          <p>(913)206-7918</p>
+          <p>adam@kswrestlingcenter.com</p>
         </div>
         <div id="aside2" class="aside2">
           <form id="form">
