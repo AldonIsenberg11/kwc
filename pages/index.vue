@@ -128,6 +128,7 @@
 // import eventsQuery from '~/apollo/events'
 // import newsQuery from '~/apollo/news'
 import Joi from 'joi'
+import wrestlingEvents from '~/services/eventService.js'
 export default {
   // async created () {
   //   try {
@@ -148,12 +149,7 @@ export default {
       visitorName2: '',
       visitorEmail2: '',
       errorMessage: '',
-      events: [
-        // { id: 1, name: 'KCTC Freestyle Open', date: '04/24/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC freestyle tournament. Open to wrestlers ages 8 to 18. Girls and boys divisions.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
-        // { id: 2, name: 'KCTC Greco Open', date: '04/24/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629539132-KCTC_Freestyle_&_Greco_1_-_Google_Docs.pdf', description: 'First annual KCTC greco tournament. Open to wrestlers ages 8 to 18.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195937132' },
-        { id: 4, name: 'Winter Camps Summer Champs', date: '06/03/2021', eventFlyer: 'https://cdn3.sportngin.com/attachments/photo/8e72-158653761/winterChampsCamp_large.jpg', description: 'Featuring NCAA Champ Austin O\'Conner, \n3x KS HS State Champ Clay Lautt\n2021 NCAA AA Zach Sherman', signup: 'https://kswrestlingcenter.sportngin.com/register/form/885516487' },
-        { id: 3, name: 'Diamonds in the Rough', date: '06/18/2021', eventFlyer: 'https://www.trackwrestling.com/tw/uploads/O-629255132-Copy_of_DNR_KWC-1_2.jpg', description: 'All girls divisions k-12.' + '\n' + 'Registration: $50 per wrestler until 3/18/21, $75 per wrestler after 3/18/21.', signup: 'https://www.trackwrestling.com/registration/TW_Register.jsp?tournamentGroupId=195846132' }
-      ],
+      events: wrestlingEvents,
       query: '',
       successfulSnackbar: false,
       errorSnackbar: false,
